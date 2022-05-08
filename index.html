@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dave's Blackjack</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Dave's Blackjack</h1>
+        </header>
+
+
+        <section class="container">
+            <div id="gameBtn" class="game-button">
+                <h2 id="gameBtnText" class="button-text">DEAL</h2>
+            </div>
+        </section>
+
+
+        <section class="container">
+            <section id="dealerCards" class="dealer-cards">
+                <!-- <div class="card">
+                    <h2 class="card-top">A</h2>
+                    <h2 class="card-suit">&#9824</h2> 
+                    S: 9824, C: 9827 H: 9829 D: 9830
+                    <h2 class="card-bottom">A</h2> -->
+                </div> 
+            </section>
+        </section>
+
+
+        <section class="container">
+            <section id="userCards" class="user-cards">
+                <!-- <div class="card">
+                    <h2 class="card-top">A</h2>
+                    <h2 class="card-suit">&#9824</h2>
+                    <h2 class="card-bottom">A</h2>
+                </div> -->
+            </section>
+        </section>
+
+        <div id="resultsMessage" class="results-message">
+            <h2 id="resultsText" class="results-text">Blackjack! User Wins!</h2>
+        </div>
+
+
+        <section class="container">
+            <div class="hit-stay-wrapper">
+                <div id="hitBtn" class="hit-stay-btn">
+                    <h2>HIT</h2>
+                </div>
+                <div class="balance-wrapper">
+                    <h2 class="balance">Current Bet: $<span id="betAmount">0</span></h2>
+                    <h2 class="balance">Bank Balance: $<span id="bankBalance">500</span></h2>
+                </div>
+                <div id="stayBtn" class="hit-stay-btn">
+                    <h2>STAY</h2>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container">
+            <div class="chip-wrapper">
+                <div id="chip1" class="chip">
+                    <h2>$1</h2>
+                </div>
+                <div id="chip5" class="chip">
+                    <h2>$5</h2>
+                </div>
+                <div id="chip10" class="chip">
+                    <h2>$10</h2>
+                </div>
+                <div id="chip50" class="chip">
+                    <h2>$50</h2>
+                </div>
+                <div id="chip100" class="chip">
+                    <h2>$100</h2>
+                </div>
+            </div>
+        </section>
+
+        <script src="./index.js" async defer></script>
+    </body>
+</html>

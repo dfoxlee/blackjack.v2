@@ -1,0 +1,430 @@
+/* CSS RESET
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* HERO WRAPPER
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap');
+
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url(./resources/blackjack-table.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* HEADER
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+header {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    margin: 20px 0;
+    color: gainsboro;
+    font-size: 2.25rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+}
+
+.title:after {
+    content: "";
+    display: block;
+    background-color: goldenrod;
+    width: 70%;
+    height: .125rem;
+    margin: auto;
+    transition: width 0.3s;
+}
+
+@media only screen and (max-width: 500px) {
+    .title {
+        font-size: 1.5rem;
+        letter-spacing: 0.3rem;
+    }
+}
+
+/* GAME BUTTON
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.game-button {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    margin: 0 auto 10px;
+    background-color: darkred;
+    border-radius: 20px;
+    transition: box-shadow 0.2s;
+}
+
+.button-text {
+    margin: auto;
+    padding: 8px 30px 8px;
+    color: gainsboro;
+    font-weight: 100;
+}
+
+.game-button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 5px gainsboro;
+}
+
+.game-button:acive {
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 500px) {
+    .button-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* RESULTS MESSAGE
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.results-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(139, 0, 0, 0.9);
+  border: 2px solid goldenrod;
+  border-radius: 20px;
+  display: none;
+  width: max-content;
+  max-width: 400px;
+}
+
+.results-text {
+  color: gainsboro;
+  padding: 10px;
+  text-align: center;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 500px) {
+  .results-message {
+    max-width: 90%;
+  }
+}
+
+/* CARDS
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.dealer-cards,
+.user-cards {
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    min-height: 150px;
+}
+
+.card {
+    height: 150px;
+    aspect-ratio: 686 / 976;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    margin: 5px;
+}
+
+.card-top {
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    font-weight: 400;
+}
+
+.card-suit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+}
+
+.card-bottom {
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
+    font-weight: 400;
+}
+
+.H, 
+.D {
+  color: red;
+}
+
+.S, 
+.C {
+  color: black;
+}
+
+@media only screen and (max-width: 500px) {
+  .dealer-cards,
+  .user-cards {
+    min-height: 125px;
+  }
+  
+  .card {
+      height: 125px;
+  }
+
+  .card-top,
+  .card-bottom {
+    font-size: 1.125rem;
+  }
+
+  .card-suit {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .dealer-cards,
+  .user-cards {
+    min-height: 175px;
+  }
+  
+  .card {
+      height: 175px;
+  }
+
+  .card-top,
+  .card-bottom {
+    font-size: 1.75rem;
+  }
+
+  .card-suit {
+    font-size: 5rem;
+  }
+}
+
+/* HIT AND STAY BUTTONS
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.hit-stay-wrapper {
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+.hit-stay-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  display: flex;
+  margin: 0 auto 10px;
+  background-color: goldenrod;
+  transition: box-shadow 0.2s;
+}
+
+.hit-stay-btn h2 {
+  font-size: 1.25rem;
+  margin: auto;
+  color: #002813;
+  font-weight: 400;
+}
+
+.hit-stay-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px 5px gainsboro;
+}
+
+.hit-stay-btn:acive {
+box-shadow: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .hit-stay-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+  }
+  
+  .hit-stay-btn h2 {
+      font-size: 1rem;
+  }
+}
+
+/* BALANCES
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.balance-wrapper {
+  width: max-content;
+  margin: auto;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.balance {
+  color: gainsboro;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 500px) {
+  .balance {
+      font-size: 1rem;
+  }
+}
+
+/* CHIPS
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.chip-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.chip {
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  border-radius: 50px;
+  border: 2px solid goldenrod;
+  background-color: gainsboro;
+  display: flex;
+  transition: box-shadow 0.3s;
+}
+
+.chip:hover {
+  box-shadow: 0 0 5px 5px gainsboro;
+  cursor:pointer;
+}
+
+.chip:active {
+  box-shadow: none;
+}
+
+#chip1 {
+  background-color: gainsboro;
+}
+
+#chip5 {
+  background-color: darkred;
+}
+
+#chip10 {
+  background-color: lightblue;
+}
+
+#chip50 {
+  background-color: darkblue;
+}
+
+#chip100 {
+  background-color: black;
+}
+
+.chip h2 {
+  margin: auto;
+  color: goldenrod;
+  font-size: 1.06rem;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 1600px) {
+  .chip {
+    height: 75px;
+    width: 75px;
+    border-radius: 75px;
+    margin: 10px;
+  }
+
+  .chip h2 {
+    font-size: 1.25rem;
+  }
+}
